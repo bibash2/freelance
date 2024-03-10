@@ -14,15 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$show  = isset($result["form_reset"]) ? true : false;
+// $show  = isset($result["form_reset"]) ? true : false;
 
-function post_value($field)
-{
-    global $show;
-    if (isset($_POST[$field]) && !$show) {
-        echo "value" . trim(htmlspecialchars($_POST[$field])) . '"';
-    }
-}
+// function post_value($field)
+// {
+//     global $show;
+//     if (isset($_POST[$field]) && !$show) {
+//         echo "value" . trim(htmlspecialchars($_POST[$field])) . '"';
+//     }
+// }
 
 ?>
 
@@ -42,15 +42,15 @@ function post_value($field)
         <h1>Sign Up</h1>
         <form action="" method="POST" id="theForm">
             <label for="user_name">Name: <span></span></label>
-            <input type="text" class="input" name="name" <?php post_value("name"); ?> id="user_name" placeholder="Your name">
+            <input type="text" class="input" name="name" id="user_name" placeholder="Your name">
 
             <label for="user_email">Email: <span></span></label>
-            <input type="email" class="input" name="email" <?php post_value("email"); ?> id="user_email" placeholder="Your email">
+            <input type="email" class="input" name="email" id="user_email" placeholder="Your email">
 
 
 
             <label for="user_pass">Password: <span></span></label>
-            <input type="password" class="input" name="password" <?php post_value("password"); ?> id="user_pass" placeholder="New password">
+            <input type="password" class="input" name="password"  id="user_pass" placeholder="New password">
             <?php if (isset($result["msg"])) { ?>
                 <p class="msg<?php if ($result["ok"] === 0) {
                                     echo " error";

@@ -13,7 +13,7 @@ function on_register($pdo)
         if (empty($pass)) $arr['password'] = "Must not be empty";
 
         return [
-            "OK" => 0,
+            "ok" => 0,
             "field_error" => $arr
         ];
     }

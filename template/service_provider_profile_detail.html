@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .user {
+            width: 60%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile_header {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .profile_header p {
+            margin: 0;
+        }
+
+        .profile_header span {
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .service_category {
+            font-style: italic;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        .comment {
+            display: flex;
+            gap: 10px;
+        }
+
+        .reviews,
+        .works {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .reviews:hover,
+        .works:hover {
+            background-color: #2980b9;
+        }
+
+        .work,
+        .review {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        form {
+            margin-top: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #27ae60;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #219952;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="user">
+        <div class="profile_header">
+            <p class="">User</p>
+            <span> rating</span>
+        </div>
+
+        <p class="service_category">Electrician</p>
+        <div class="comment">
+            <button class="reviews">Add Reviews</button>
+            <button class="works">Add Work</button>
+        </div>
+    </div>
+
+
+
+
+    <div class="review hidden">
+        <h3>Reviews</h3>
+        <form action="">
+            <label for="commnet">Comment:</label><br>
+            <textarea name="review" id="" cols="30" rows="10"></textarea><br>
+
+            <label for="commnet">Rating:</label><br>
+            <input list="ratings" name="rating">
+            <datalist id="ratings">
+                <option value="1">
+                <option value="2">
+                <option value="3">
+                <option value="4">
+                <option value="5">
+            </datalist><br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+
+    <div class="work hidden">
+        <form action="">
+            <label for="commnet">Work Detail</label><br>
+            <textarea name="" id="comment" cols="30" rows="10"
+                placeholder="Write the detail description about the job"></textarea>
+            <label for="commnet">Comment:</label><br>
+            <input type="date" id="comment" name="comment"><br><br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+    <!-- button to show comment and works -->
+    <div>
+        <button class="show_comments">Show Reviews</button>
+        <button class="show_works">Show Work</button>
+    </div>
+
+    <!-- show comment and rating  -->
+    <div class="show_comment ">
+        <h5 class="User">User name</h5>
+        <time>date</time>
+    </div>
+
+    <!-- show work -->
+
+    <div class="show_work hidden">
+        <h5>user</h5>
+        <time>time</time>
+        <p>description</p>
+    </div>
+
+    <script>
+
+
+
+        // addd work
+        const hidden = document.querySelector('.hidden');
+        const add_reviews = document.querySelector('.reviews');
+        const add_works = document.querySelector('.works');
+
+        const review = document.querySelector('.review');
+        const work = document.querySelector('.work');
+
+        add_reviews.addEventListener('click', () => {
+            review.classList.remove('hidden');
+            work.classList.add("hidden");
+        });
+
+        add_works.addEventListener('click', () => {
+            review.classList.add('hidden');
+            work.classList.remove('hidden');
+        });
+
+        // document.querySelector('body').addEventListener('click', () => {
+        //     review.classList.add('hidden')
+        //     work.classList.add('hidden')
+        // })
+
+        // showing reviews and works
+        const show_comments = document.querySelector('.show_comments');
+        const show_works = document.querySelector('.show_works');
+
+        const show_comment = document.querySelector('.show_comment');
+        const show_work = document.querySelector('.show_work');
+
+
+        show_comments.addEventListener('click', () => {
+            show_comment.classList.remove('hidden');
+            show_work.classList.add('hidden');
+        });
+
+        show_works.addEventListener('click', () => {
+            show_comment.classList.add('hidden');
+            show_work.classList.remove('hidden');
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -48,9 +48,9 @@ function on_login($pdo){
             ]
         ];
     }
-
++
     // Setting the user id to the session
     $_SESSION['logged_user_id'] = $row["id"];  
-    header('Location: home.php');
+    header('Location: ../home/home.php');
     exit;
 }

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px;
+            background-color: #fff;
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            margin-bottom: 10px;
+        }
+
+        .header h4 {
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+        }
+
+        .card-info span {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .bid {
+            margin: 20px;
+            width: 30rem;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 2px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Optional: Add styles for better visual clarity on focus */
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        .posted_bid {
+            align-items: center;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            width: calc(100% - 2rem);
+            /* 1rem from left and 1rem from right */
+            max-width: 400px;
+            /* Optional: Set a maximum width for better readability on larger screens */
+        }
+
+        .posted_bid div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .posted_bid>div {
+            margin-right: 15px;
+        }
+
+        .user_name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+
+        .bid_amount {
+            font-size: 14px;
+            color: #777;
+            margin: 0;
+        }
+
+        .bid_desc {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="header">
+            <h4>Service Header</h4>
+            <p><span>5</span> days ago</p>
+        </div>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores nam, perferendis veniam repellat,
+            omnis
+            minima pariatur fuga laboriosam enim reprehenderit aut. Quod, a. Est aperiam laboriosam mollitia minima
+            eligendi error.
+        </p>
+        <div class="card-info">
+            <span>Price</span>
+            <span>Electrician</span>
+            <span>Address</span>
+            <span>Completion Date</span>
+            <p>9 bid</p>
+        </div>
+    </div>
+    <!-- add bid button -->
+    <button class="add_bid">Post Bid</button>
+    <div class="bid hidden">
+        <form action="">
+            <label for="bid">Bid:</label><br>
+            <input type="text" id="bid" name="bid_amount"><br><br>
+
+            <label for="bid_desc">Description</label><br>
+            <input type="text" id="bid" name="bid_desc"><br>
+
+            <input type="submit">
+
+        </form>
+
+    </div>
+    <div class="posted_bid">
+        <div>
+            <p class="user_name">user</p>
+            <p class="bid_amount"> Bid amount: 30</p>
+        </div>
+        <p class="bid_desc">ksdfjhkjsdhfkjdshkj</p>
+    </div>
+
+    <script>
+        const add_bid = document.querySelector('.add_bid')
+        const bid_post = document.querySelector('.bid');
+        add_bid.addEventListener('click', () => {
+           if(bid_post.style.display==="none"||bid_post.style.display===""){
+            bid_post.style.display="block";
+           } else{
+            bid_post.style.display="none"
+           }
+        });
+
+    </script>
+</body>
+
+</html>

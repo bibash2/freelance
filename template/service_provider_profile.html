@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            margin-top: 5px;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .user {
+            width: 60%;
+            border: 1px solid #ccc;
+            border-radius: 1rem;
+            margin-top: 9px;
+            margin-bottom: 9px;
+            padding: 10px;
+
+        }
+
+        .user:hover {
+            box-shadow: 3px 1rem 1rem rgba(16, 16, 130, 0.1);
+        }
+
+        .user .profile_header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        span {
+            font-weight: bold;
+            color: blue;
+        }
+
+        .service_category {
+            font-style: italic;
+            color: green;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: blue;
+            border: 0px solid black;
+            border-radius: 3px;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 3px;
+        }
+
+        button:hover {
+            box-shadow: 3px 1rem 1rem rgba(16, 16, 130, 0.1);
+        }
+
+        .comment {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="user">
+        <div class="profile_header">
+            <p class="">User</p>
+            <span> rating</span>
+        </div>
+
+        <p class="service_category">Electrician</p>
+        <div class="comment">
+            <button class="reviews">Add Reviews</button>
+            <button class="work">Add Work</button>
+        </div>
+    </div>
+
+    <!-- <div class="reviews hidden">
+        <h3>Reviews</h3>
+        <form action="">
+            <label for="commnet">Comment:</label><br>
+            <input type="text" id="comment" name="comment"><br><br>
+
+            <label for="commnet">Comment:</label><br>
+            <input type="number" id="comment" name="comment"><br><br>
+        </form>
+    </div>
+
+
+    <div class="work hidden">
+        <form action="">
+            <label for="commnet">Work Detail</label><br>
+            <textarea name="" id="comment" cols="30" rows="10"
+                placeholder="Write the detail description about the project"></textarea>
+            <label for="commnet">Comment:</label><br>
+            <input type="date" id="comment" name="comment"><br><br>
+
+        </form>
+    </div> -->
+
+    <script>
+        const review = document.querySelector(".reviews");
+        const work = document.querySelector(".work");
+
+        review.addEventListener("click", () => {
+
+        })
+    </script>
+</body>
+
+</html>
